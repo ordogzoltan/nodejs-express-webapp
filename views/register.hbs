@@ -1,0 +1,26 @@
+ <div id="form">
+ <h1>Register</h1>
+        <form action="/create_hash" method="POST" id="form">
+            {{#if error}}
+            <label class="errorlabel">{{{error}}}</label><br><br>
+            {{/if}}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+
+
+
+            <input type="radio" id="user" name="privilege" value="user" checked>
+            <label for="user">user</label><br>
+
+            <input type="radio" id="admin" name="privilege" value="admin">
+            <label for="admin">admin</label><br>
+            <br>
+
+            <input type="submit" value="Register">
+        </form>
+</div>

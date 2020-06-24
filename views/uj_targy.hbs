@@ -1,0 +1,17 @@
+ <div id="form">
+ <h1>Új tantárgy létrhozása</h1>
+        <form action="/submit_form_uj_targy" method="POST" id="form">
+            {{#if error}}
+            <label class="errorlabel">{{{error}}}</label><br><br>
+            {{/if}}
+            <label for="id">Tantargy egyedi kodja:</label>
+            <input type="text" id="id" name="id" required>
+            <br>
+
+            <label for="leiras">Leiras:</label>
+            <input type="text" id="leiras" name="leiras" required>
+            <br>
+
+            <input type="submit" value="Send">
+        </form>
+</div>

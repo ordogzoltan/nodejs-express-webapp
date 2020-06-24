@@ -1,0 +1,54 @@
+<div id="listazas">
+<h1>Feladatok tábla</h1>
+{{#if sikertelenTorles}}
+  <label class="errorlabel">{{{sikertelenTorles}}}</label><br><br>
+{{/if}}
+{{#if eredmeny.0.id}}
+    <table>
+        <tr>
+          <th>Leirás</th>
+          <th>Határidő</th>
+          <th>Állomány</th>
+        </tr>
+        {{#each eredmeny}}
+        <tr>
+          <td class="torolniValo_{{id}}">{{leiras}}</td>
+          <td class="torolniValo_{{id}}">{{hatarido}}</td>
+          <td class="torolniValo_{{id}}">{{file}}</td>
+          {{#if ../tulajdonos}}
+          <td ><button id="{{id}}" onclick="feladatTorles(this.id)">törlés</button></td>
+          {{/if}}
+        </tr>
+         {{/each}}
+    </table>
+{{else}}
+  <p>Nincsenek feladatok!</p>
+{{/if}}
+</div>
+
+<br>
+
+{{#if admin}}
+<div id="form">
+<h1>Új feladat létrhozása</h1>
+        <form action="/submit_form_uj_feladat_{{eredmeny.0.tid}}" method="POST" enctype="multipart/form-data">
+            {{#if error}}
+            <label class="errorlabel">{{{error}}}</label><br><br>
+            {{/if}}
+
+            <label for="fleiras">Feladat rövid leírása:</label>
+            <input type="text" id="fleiras" name="fleiras" required>
+            <br><br>
+
+            <label for="hatarido">Határidő:</label>
+            <input type="date" id="hatarido" name="hatarido" required>
+            <br><br>
+
+            <label for="allomany">Állomány:</label>
+            <input type="file" id="allomany" name="allomany">
+            <br>
+
+            <input type="submit" value="Send">
+        </form>
+</div>
+{{/if}}

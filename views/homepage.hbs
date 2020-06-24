@@ -1,0 +1,32 @@
+<div id="listazas">
+  <h1>Tantárgyak listázása</h1>
+  {{#if tantargyak}}
+    <table>
+      <tr>
+        <th>Tantargy ID</th>
+        <th>Feladatok</th>
+        {{#if admin}}
+        <th>Törlés</th>
+        {{/if}}
+      </tr>
+      {{#each tantargyak}}
+      <tr>
+        <th id="{{id}}" class="classID" onclick="tantargyDetail(this.id)">{{id}}</th>
+        <form action="/feladat_{{id}}">
+          <th><button class="sendButton" name="feladat" value="feladat">feladatok</button></th>
+        </form>
+        {{#if ../admin}}
+        <form action="/torles_{{id}}" method="POST">
+          <th><button type="submit" name="torles" value="torles" class="sendButton">törlés</button></th>
+        </form>
+        {{/if}}
+        <tr id="dfull_{{id}}">
+          <th id="leiras_{{id}}"></th>
+        </tr>
+      </tr>
+      {{/each}}
+    </table>
+  {{else}}
+    <p>No records!</p>
+  {{/if}}
+</div>

@@ -1,0 +1,24 @@
+<div id="header">
+<header id="navbar">
+  <nav class="menu">
+     <ul class="menu-left">
+       {{#if user}}
+        <li><a href="/">Home Page</a></li>
+        {{#if admin}}
+        <li><a href="/uj_targy">Új Tantárgy</a></li>
+        {{/if}}
+       {{/if}}
+    </ul>
+    <ul class="menu-right">
+        {{#if user}}
+        <li><a href="/logout"class="right">Log out</a></li>
+        <li><a id="username">User: {{user}} {{#if admin}} (admin) {{/if}}</a></li>
+        {{else}}
+        <li><a href="/login" class="right">Log in</a></li>
+        <li><a href="/register" class="right">Register</a></li>
+        {{/if}}
+    </ul>
+  </nav>
+</header>
+</div>
+<br>

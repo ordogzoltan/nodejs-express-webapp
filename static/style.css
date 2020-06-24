@@ -1,0 +1,185 @@
+/*Ez mindenre vonatkozik*/
+body{
+  font-family: "Ubuntu", -apple-system, "Segoe UI", "Roboto", "Oxygen", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: rgb(79, 27, 114);
+  background-image:linear-gradient(-89deg, #2c001e 0%, #772953 42%, #e95420 94%);
+}
+
+/*Tablazatokra*/
+table, th, td {
+  border-collapse: collapse;
+  border: 2px solid gray;
+}
+
+/*Form input formazasa*/
+input[type=text], input[type=password], select {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #772953;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #521535;
+}
+
+div#form{
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.6);
+  padding: 20px;
+  width: fit-content;
+  margin: auto;
+}
+
+/*Tablazatok, kilistazasok formazasa*/
+div#listazas{
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.6);
+  padding: 20px;
+  width: fit-content;
+  margin: auto;
+}
+
+
+div#listazas table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*Navbar*/
+#header{
+  background-color: #1c1212;
+  box-sizing: border-box;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+nav.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav.menu ul {
+  list-style: none;
+}
+
+nav.menu ul li{
+  display: inline-block;
+}
+
+nav.menu .menu-right {
+  padding-right: 35px;
+}
+
+#header a{
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 24px;
+  padding:15px;
+  align-items: left;
+  transition: all 0.3s ease 0s;
+}
+
+a#username {
+  pointer-events:none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+
+#header a:hover{
+  color: #b31c1c;
+}
+
+
+/*Error message*/
+div#errormsg{
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.6);
+  padding: 20px;
+  width: fit-content;
+  margin: auto;
+}
+
+
+/*Form error uzenetek*/
+.errorlabel {
+  color: #b31c1c;
+}
+
+.sendButton {
+  width: 100%;
+  background-color: #772953;
+  color: white;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 00;
+}
+
+
+/*AJAX tantargy leiras*/
+#detailMessage {
+  border-left: hidden!important;
+  border-right: hidden!important;
+}
+
+/* ^= indicates "starts with". Conversely, $= indicates "ends with" */
+/*[id^=dfull] {
+  display: none;
+  border-collapse: collapse;
+  border: none!important;
+}
+
+[id^=leiras] {
+  border-collapse: collapse!important;
+  border: none!important;
+}*/
+
+.classID:hover {
+  text-decoration: underline;
+}
+
+[id^=dfull] {
+  empty-cells: hide;
+  border-collapse: collapse;
+  border: none!important;
+  max-height: 0;
+  transition: max-height 0.3s, padding 0.3s;
+}
+
+[id^=dfull]:target {
+  display: inline;
+  empty-cells: hide;
+  border-collapse: collapse;
+  border: none!important;
+  max-height: 100%;
+  transition: max-height 0.3s, padding 0.3s;
+}
+
+button {
+  background-color: #772953;
+  border: none;
+  border-radius: 4px;
+}
+button:hover {
+  background-color: #521535;
+}
